@@ -35,8 +35,24 @@ python generate_folders.py cb12
 
 This repository contains the code to reproduce the experiments on the Recsys Challenge 2017 dataset. Download the [RecSys17](http://www.recsyschallenge.com/2017/#dataset) and [CareerBuilder12](https://www.kaggle.com/c/job-recommendation/data) datasets and put them in the `data/\<dataset\>/raws/` folder. Use the `ipython/1_Preprocessing/` notebooks to create the train and test files. The code to create the dataset plots in the paper can be found in the `ipython/2_Data_Analysis/` folder.
 
+##### Explanation of the data folder structure
+
+- raw: contains the raw data, put the dataset there (items.csv and interactions.csv)
+- interim: contains processed data (interactions.csv, train_session_interaction_vector.csv and vocabulary.csv)
+- interim/infer: contains the inferred session representations by autoencoders as csv
+- interim/models: contains the trained autoencoder models
+- interim/predict: contains the prediction csv files for autoencoders
+- interim/predict/base: contains the prediction csv files for baseline algorithms
+- interim/predict/hyperparam: contains the prediction csv files for hyperparameter optimization
+- processed: contains training, validation and test sets (train_14d.csv, valid_train_14d.csv, valid_test_14d.csv, test_14d.csv)
+- processed/eval: evaluation results for autoencoders
+- processed/eval/base: evaluation results for baseline algorithms
+- processed/eval/hyperparam: evaluation results for hyperparameter optimization
+
+All eval folders contain the subfolders `all` and `next` for the two prediction scenarios.
+
 ### Compile Main Code
-The main code to (i) evaluate the generated predictions, (ii) create predictions for the Naive Bayes baseline and (iii) generate predictions for the latent session vectors inferred from the autoencoders is written in Java 8 and is contained in the `main_code` folder.  
+The main code to (i) evaluate the generated predictions, (ii) create predictions for the Bayes baseline and (iii) generate predictions for the latent session vectors inferred from the autoencoders is written in Java 8 and is contained in the `main_code` folder.  
 
 ```
 cd main_code
@@ -47,7 +63,7 @@ mvn clean install
 
 | Mode | Description |
 | ------ | ------ |
-| **predict-bayes** | Generates predictions using the Naive Bayes baseline |
+| **predict-bayes** | Generates predictions using the Bayes baseline |
 | **predict** | Predicts for each test session the next jobs to interact with |
 | **eval** | Evaluates the generated prediction file with respect to accuracy and non-accuracy metrics |
 
@@ -88,8 +104,8 @@ java -jar target/test-predictor-1.0-SNAPSHOT-bin.jar conf/cb12/eval_base_cb12.pr
 ```
 Again, depending on the dataset, it is possible that the **-Xms** and **-Xmx** flags need to be set. The properties file may also be need to be adjusted depending on the used data structure. 
 
- ### Naive Bayes baseline
-Use the Java code with the **predict-bayes** flag to generate the predictions for the Naive Bayes baseline
+ ### Bayes baseline
+Use the Java code with the **predict-bayes** flag to generate the predictions for the Bayes baseline
 ```
 java -jar target/test-predictor-1.0-SNAPSHOT-bin.jar conf/cb12/eval_base_cb12.properties predict-bayes
 ```

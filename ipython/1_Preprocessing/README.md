@@ -20,7 +20,7 @@ In processed folder:
 
 ## Datasets
 
-A detailed description for the recsys dataset can be found on the [RecSys Challenge Webseite](http://www.recsyschallenge.com/2017/).
+A detailed description for the RecSys17 dataset can be found on the [RecSys Challenge Webseite](http://www.recsyschallenge.com/2017/).
 
 The RecSys interaction.csv file has the following fields:
 - user_id [int]
@@ -28,7 +28,7 @@ The RecSys interaction.csv file has the following fields:
 - interaction_type [int]
 - created_at [int] (timestamp since epoch in seconds)
 
-The RecSys items.csv file has the following fields:
+The RecSys17 items.csv file has the following fields:
 - item_id
 - title # unused
 - career_level
@@ -43,20 +43,22 @@ The RecSys items.csv file has the following fields:
 - tags # unused
 - created_at # unused
 
-The Studo interaction.csv file has the following fields:
-- \<empty\> [int] (id of interaction)
-- item_id [string]
-- session_id [string]
-- interaction_type [int]
-- user_id [string]
-- created_at [int] (timestamp since epoch in nanoseconds)
+A detailed description for the CareerBuilder12 dataset can be found on the [Kaggle Website](https://www.kaggle.com/c/job-recommendation/data)
 
-The Studo items.csv has the following fields:
+The CareerBuilder12 interaction.csv file has the following fields (after transformation):
+- user_id [int]
+- created_at [int] (timestamp since epoch in seconds)
+- item_id [int]
+- interaction_type [int] (always has the value 0)
+- session_id [int] (present in interim interactions, but not raw)
+
+The CareerBuilder12 items.csv has the following fields (after transformation):
+city	state	country	zip5	ReqTopic	DescTopic	TitTopic
 - item_id
-- job_begins_now
-- job_country
-- job_effort
-- job_language
-- job_state
-- labels
-- tags
+- city
+- state
+- country
+- zip5
+- ReqTopic
+- DescTopic
+- TitTopic

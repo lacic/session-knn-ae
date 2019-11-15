@@ -8,16 +8,14 @@ def generate_folder_structure(dataset):
     os.makedirs(root + "/" + dataset + "/raw")
     os.makedirs(root + "/" + dataset + "/interim/infer")
     os.makedirs(root + "/" + dataset + "/interim/models")
-    os.makedirs(root + "/" + dataset + "/interim/predict/base/warm")
-    os.makedirs(root + "/" + dataset + "/interim/predict/knn_candidate_sessions/warm")
-    os.makedirs(root + "/" + dataset + "/interim/predict/content_candidate_sessions/warm")
-
-    algo_types = ["base", "content_knn_candidates", "interaction_knn_candidates", "content_recent_sessions", "interaction_recent_sessions"]
-    eval_types = ["all", "next"]
-
-    for algo_type in algo_types:
-        for eval_type in eval_types:
-                os.makedirs(root + "/" + dataset + "/processed/eval/" + algo_type + "/" + eval_type)
+    os.makedirs(root + "/" + dataset + "/interim/predict/base")
+    os.makedirs(root + "/" + dataset + "/interim/predict/hyperparam")
+    os.makedirs(root + "/" + dataset + "/interim/processed/eval/all")
+    os.makedirs(root + "/" + dataset + "/interim/processed/eval/next")
+    os.makedirs(root + "/" + dataset + "/interim/processed/eval/base/all")
+    os.makedirs(root + "/" + dataset + "/interim/processed/eval/base/next")
+    os.makedirs(root + "/" + dataset + "/interim/processed/eval/hyperparam/all")
+    os.makedirs(root + "/" + dataset + "/interim/processed/eval/hyperparam/next")
 
 
 if __name__ == "__main__":
