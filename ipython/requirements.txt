@@ -1,0 +1,8 @@
+keras
+theano
+nltk
+pandas
+matplotlib
+ipython
+nbconvert
+# nomkl
