@@ -22,3 +22,12 @@ Hyperparameters are optimized for each dataset by evaluating the **nDCG** metric
 | pRNN         | ACTIVATION               | tanh              | tanh                 | softmax             |
 | pRNN         | LAYERS                   | \[1000\]          | \[100\]              | \[1000\]            |
 | pRNN         | α                        | 0.001             | 0.01                 | 0.001               |
+
+## Studo
+![Studo](hpopt-results/studo.png)
+
+## RecSys17
+![RecSys17](hpopt-results/recsys17.png)
+
+## CareerBuilder12
+![CareerBuilder12](hpopt-results/cb12.png)
