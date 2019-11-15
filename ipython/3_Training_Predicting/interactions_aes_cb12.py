@@ -31,7 +31,7 @@ def train_algo(algo, algo_name, train_data):
     algo.fit( train_data )
     
     # save the model to disk
-    filename = "models/studo_"  + algo_name + ".model"
+    filename = "models/cb12_"  + algo_name + ".model"
     print("Finished training. Storing model to: " + filename)
 
     pickle.dump(algo, open(filename, 'wb'), protocol=4)

@@ -39,7 +39,6 @@ git
 # custom
 /data/*
 /infer/*
-/results/studo/vae/*
 /results/recsys17/vae/*
 /results/recsys17/*
 /eval_ignore/*

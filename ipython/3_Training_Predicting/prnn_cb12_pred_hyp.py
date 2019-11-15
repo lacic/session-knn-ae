@@ -137,7 +137,7 @@ print(len(common_items))
 # In[5]:
 
 
-# Studo items need to be converted to dummies
+# CareerBuilder12 items need to be converted to dummies
 
 common = common_items
 

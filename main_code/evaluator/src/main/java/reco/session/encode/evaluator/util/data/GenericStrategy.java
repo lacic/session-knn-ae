@@ -3,7 +3,7 @@ package reco.session.encode.evaluator.util.data;
 import reco.session.encode.evaluator.util.data.dao.SessionInteraction;
 
 /**
- * Strategy how to extract interaction data from one row of tsv/csv file of the Studo dataset. 
+ * Strategy how to extract interaction data from one row of tsv/csv file of the dataset.
  * 
  */
 public class GenericStrategy implements DataStrategy {
