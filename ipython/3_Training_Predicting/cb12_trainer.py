@@ -63,17 +63,17 @@ if __name__ == '__main__':
         hidden_act='tanh', 
         layers=[1000], 
         batch_size=32, 
-        dropout_p_hidden=0.0, 
+        dropout_p_hidden=0.2,
         learning_rate=0.2, 
-        momentum=0.5, 
+        momentum=0.0,
         n_sample=2048, 
         sample_alpha=0, 
         time_sort=True
     )
 
-    algs['cknn'] = cknn.ContextKNN(500, 1000, sampling="random", similarity="jaccard", pop_boost = 1)
-    algs['scknn'] = scknn.SeqContextKNN(500, 1000, sampling="random", similarity="cosine", pop_boost = 1)
-    algs['vknn'] = svmknn.VMContextKNN(500, 1000, sampling="random", similarity="cosine", pop_boost = 0)
+    algs['cknn'] = cknn.ContextKNN(1000, 1000, sampling="random", similarity="jaccard", pop_boost = 1)
+    algs['scknn'] = scknn.SeqContextKNN(1000, 1000, sampling="random", similarity="cosine", pop_boost = 1)
+    algs['vknn'] = svmknn.VMContextKNN(100, 1000, sampling="random", similarity="cosine", weighting='log', pop_boost = 0)
     
     
     if args.algo is "all":
